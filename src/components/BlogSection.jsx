@@ -33,7 +33,7 @@ const BlogSection = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h4 style={{ color: 'var(--primary)', letterSpacing: '0.25em', marginBottom: '20px', fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700 }}>Our Journal</h4>
-          <h2 style={{ fontSize: 'max(3rem, 4vw)', marginBottom: '20px', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
+          <h2 style={{ fontSize: 'max(2.2rem, 5vw)', marginBottom: '20px', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
             Corridor Seven Blogs
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.5)', maxWidth: '600px', margin: '0 auto' }}>
@@ -41,7 +41,12 @@ const BlogSection = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', justifyContent: 'center' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+          gap: '30px', 
+          justifyContent: 'center' 
+        }}>
           {blogs.map((blog, i) => (
             <motion.div 
               key={blog.title}

@@ -60,8 +60,8 @@ const ProductShowcase = () => {
           transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: '80px' }}
         >
-          <h4 style={{ color: 'var(--primary)', letterSpacing: '0.2em', marginBottom: '15px', textTransform: 'uppercase', fontSize: '0.9rem' }}>Coffee For You</h4>
-          <h2 style={{ fontSize: 'max(3rem, 4vw)', color: 'var(--secondary)' }}>The Season's Best Harvests</h2>
+          <h4 style={{ color: 'var(--primary)', letterSpacing: '0.2em', marginBottom: '15px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Coffee For You</h4>
+          <h2 style={{ fontSize: 'max(2.2rem, 5vw)', color: 'var(--secondary)', lineHeight: 1.2 }}>The Season's Best Harvests</h2>
         </motion.div>
         
         <motion.div 
@@ -71,8 +71,8 @@ const ProductShowcase = () => {
           viewport={{ once: true, margin: '-50px' }}
           style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', 
-            gap: '40px' 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            gap: '20px' 
           }}
         >
           {products.map((product) => (

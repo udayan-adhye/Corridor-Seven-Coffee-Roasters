@@ -24,11 +24,17 @@ const InstagramGrid = () => {
             <Instagram size={24} color="var(--primary)" />
             <h4 style={{ color: 'var(--primary)', letterSpacing: '0.25em', fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, margin: 0 }}>Socials</h4>
           </div>
-          <h2 style={{ fontSize: 'max(2.5rem, 3.5vw)', marginBottom: '15px', color: '#000', fontWeight: 800 }}>FOLLOW OUR JOURNEY</h2>
-          <p style={{ color: '#666', fontSize: '1.1rem' }}>@corridorseven — Indian Specialty Coffee Experience</p>
+          <h2 style={{ fontSize: 'max(2rem, 5vw)', marginBottom: '15px', color: '#000', fontWeight: 800 }}>FOLLOW OUR JOURNEY</h2>
+          <p style={{ color: '#666', fontSize: '1rem' }}>@corridorseven — Indian Specialty Coffee Experience</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', 
+          gap: '15px', 
+          maxWidth: '1000px', 
+          margin: '0 auto' 
+        }}>
           {posts.map((post, i) => (
             <motion.div 
               key={i}

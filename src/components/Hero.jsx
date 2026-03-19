@@ -24,8 +24,10 @@ const Hero = () => {
 
   return (
     <section className="hero" style={{ 
-      height: '100vh', 
+      minHeight: '100vh', 
+      height: 'auto',
       display: 'flex', 
+      paddingTop: '80px',
       alignItems: 'center', 
       position: 'relative',
       overflow: 'hidden',
@@ -82,9 +84,9 @@ const Hero = () => {
             animate="visible"
             custom={2}
             style={{ 
-              fontSize: 'max(4.5rem, 8vw)', 
+              fontSize: 'max(3rem, 7vw)', 
               color: 'var(--text-light)', 
-              lineHeight: 1.05, 
+              lineHeight: 1.1, 
               marginBottom: '35px',
               maxWidth: '1000px',
               letterSpacing: '-0.03em'

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, User, ShoppingCart } from 'lucide-react';
+import { Search, User, ShoppingCart, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const Navbar = () => {
         </motion.div>
       </Link>
       
-      <div className="nav-links" style={{ display: 'flex', gap: '40px' }}>
+      <div className="nav-links desktop-only" style={{ display: 'flex', gap: '40px' }}>
         {navLinks.map((link, i) => (
           <motion.div
             key={link.name}
@@ -93,20 +94,22 @@ const Navbar = () => {
       </div>
 
       <div className="nav-actions" style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-        <motion.button 
-          whileHover={{ scale: 1.1, color: 'var(--primary)' }}
-          whileTap={{ scale: 0.9 }}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-light)', transition: 'color 0.3s' }}
-        >
-          <Search size={22} />
-        </motion.button>
-        <motion.button 
-          whileHover={{ scale: 1.1, color: 'var(--primary)' }}
-          whileTap={{ scale: 0.9 }}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-light)', transition: 'color 0.3s' }}
-        >
-          <User size={22} />
-        </motion.button>
+        <div className="desktop-only" style={{ display: 'flex', gap: '25px' }}>
+          <motion.button 
+            whileHover={{ scale: 1.1, color: 'var(--primary)' }}
+            whileTap={{ scale: 0.9 }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-light)', transition: 'color 0.3s' }}
+          >
+            <Search size={22} />
+          </motion.button>
+          <motion.button 
+            whileHover={{ scale: 1.1, color: 'var(--primary)' }}
+            whileTap={{ scale: 0.9 }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-light)', transition: 'color 0.3s' }}
+          >
+            <User size={22} />
+          </motion.button>
+        </div>
         <motion.button 
           whileHover={{ scale: 1.1, color: 'var(--primary)' }}
           whileTap={{ scale: 0.9 }}
@@ -114,7 +117,57 @@ const Navbar = () => {
         >
           <ShoppingCart size={22} />
         </motion.button>
+        
+        <button 
+          className="mobile-only"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-light)' }}
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {/* Mobile Menu Drawer */}
+      <motion.div
+        initial={{ x: '100%' }}
+        animate={{ x: isMobileMenuOpen ? 0 : '100%' }}
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          width: '80%',
+          height: '100vh',
+          background: 'var(--secondary)',
+          zIndex: 999,
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '100px 40px',
+          gap: '30px',
+          boxShadow: '-10px 0 30px rgba(0,0,0,0.5)'
+        }}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            to={link.path}
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              window.scrollTo(0, 0); // Ensure scroll to top on nav
+            }}
+            style={{
+              color: 'white',
+              fontSize: '1.5rem',
+              fontWeight: 700,
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em'
+            }}
+          >
+            {link.name}
+          </Link>
+        ))}
+      </motion.div>
     </motion.nav>
   );
 };

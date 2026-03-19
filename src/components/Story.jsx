@@ -38,20 +38,20 @@ const Story = () => {
       <div className="container">
         <div style={{ 
           display: 'flex', 
-          flexDirection: 'row', 
+          flexDirection: 'column', 
           alignItems: 'center', 
-          gap: '80px',
-          flexWrap: 'wrap'
+          gap: '40px',
+          textAlign: 'center'
         }}>
           {/* Left Column: Portrait Photo */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
             style={{ 
-              flex: '1', 
-              minWidth: '350px',
+              width: '100%',
+              maxWidth: '450px',
               position: 'relative',
               borderRadius: '24px',
               overflow: 'hidden',
@@ -66,7 +66,7 @@ const Story = () => {
           </motion.div>
 
           {/* Right Column: Accomplishments */}
-          <div style={{ flex: '1.2', minWidth: '350px' }}>
+          <div style={{ width: '100%' }}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -84,25 +84,25 @@ const Story = () => {
               }}>Founder & CEO</span>
               
               <h2 style={{ 
-                fontSize: 'max(3.5rem, 5vw)', 
-                lineHeight: 1, 
+                fontSize: 'max(2.8rem, 6vw)', 
+                lineHeight: 1.1, 
                 fontWeight: 800, 
                 marginBottom: '30px',
                 textTransform: 'uppercase'
               }}>
-                Mithilesh<br/>Vazalwar
+                Mithilesh Vazalwar
               </h2>
 
               <p style={{ 
-                fontSize: '1.3rem', 
+                fontSize: '1.1rem', 
                 color: 'rgba(255,255,255,0.7)', 
                 lineHeight: 1.7, 
                 marginBottom: '40px',
                 fontStyle: 'italic',
-                borderLeft: '4px solid var(--primary)',
-                paddingLeft: '25px'
+                borderLeft: 'none',
+                paddingLeft: '0'
               }}>
-                Corridor Seven Coffee Roasters | Coffee Q-Grader | Roaster | Trainer
+                Corridor Seven Coffee Roasters | Coffee Q-Grader <br className="desktop-only" /> | Roaster | Trainer
                 <br/>
                 Championing Indian specialty coffee, from farm to cup.
               </p>
