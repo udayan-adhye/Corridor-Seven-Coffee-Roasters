@@ -9,12 +9,13 @@ import About from './pages/About';
 
 function App() {
   useEffect(() => {
-    // Force a layout recalculation after images have had a chance to load
     const timer = setTimeout(() => {
       window.dispatchEvent(new Event('resize'));
+      window.scrollTo(0, 0);
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
 
   return (
     <Router>
