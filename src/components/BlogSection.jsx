@@ -47,7 +47,7 @@ const BlogSection = () => {
               key={blog.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               style={{ cursor: 'pointer' }}
             >
