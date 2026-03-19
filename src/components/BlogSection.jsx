@@ -24,7 +24,12 @@ const BlogSection = () => {
   ];
 
   return (
-    <section id="blogs" style={{ backgroundColor: '#000', color: 'white', padding: '20px 0' }}>
+    <section id="blogs" style={{ 
+      backgroundColor: '#000', 
+      color: 'white', 
+      padding: '20px 0',
+      minHeight: '600px'
+    }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h4 style={{ color: 'var(--primary)', letterSpacing: '0.25em', marginBottom: '20px', fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700 }}>Our Journal</h4>

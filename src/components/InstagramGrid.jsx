@@ -13,7 +13,11 @@ const InstagramGrid = () => {
   ];
 
   return (
-    <section id="instagram" style={{ backgroundColor: '#fff', padding: '60px 0' }}>
+    <section id="instagram" style={{ 
+      backgroundColor: '#fff', 
+      padding: '60px 0',
+      minHeight: '600px'
+    }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
